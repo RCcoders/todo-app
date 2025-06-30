@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcome-screen">
+        <h1>Welcome to To-Do List</h1>
+        <p>Organize your day smartly 📝</p>
+    </div>
+    <div class="container">
+    <div class="todo-app">
+        <div class="toggle-container">
+            <label class="switch">
+            <input type="checkbox" id="dark-toggle" placeholder="-">
+            <span class="slider"></span>
+            </label>
+            <span class="mode-label">Dark Mode</span>
+        </div>
+        <h2>To-Do List <img src="images/icon.png" alt=""></h2>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Add your text">
+            <input type="date" id="due-date" placeholder="due-date">
+            <button>Add</button>
+        </div>
+        <ul id="list-container">
+        </ul>
+    </div>
+   </div> 
+   <script src="script.js"></script>
+</body>
+</html>

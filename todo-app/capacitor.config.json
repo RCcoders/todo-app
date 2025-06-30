@@ -1,0 +1,10 @@
+{
+  "appId": "com.rccoders.todoappcom",
+  "appName": "To-Do",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

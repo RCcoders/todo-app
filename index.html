@@ -3,33 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List App</title>
+    <title>TaskFlow - Personal Todo App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- Welcome Screen -->
     <div id="welcome-screen">
-        <h1>Welcome to To-Do List</h1>
-        <p>Organize your day smartly 📝</p>
+        <h1>TaskFlow</h1>
+        <p>Your personal productivity companion ✨</p>
+        <div class="loading"></div>
     </div>
+
+    <!-- Main Container -->
     <div class="container">
-    <div class="todo-app">
-        <div class="toggle-container">
-            <label class="switch">
-            <input type="checkbox" id="dark-toggle" placeholder="-">
-            <span class="slider"></span>
-            </label>
-            <span class="mode-label">Dark Mode</span>
+        <div class="header">
+            <h1 class="app-title">TaskFlow</h1>
+            <p class="app-subtitle">Stay organized, stay productive</p>
         </div>
-        <h2>To-Do List <img src="images/icon.png" alt=""></h2>
-        <div class="row">
-            <input type="text" id="input-box" placeholder="Add your text">
-            <input type="date" id="due-date" placeholder="due-date">
-            <button>Add</button>
+
+        <div class="todo-app">
+            <!-- Controls -->
+            <div class="controls">
+                <div class="stats">
+                    <div class="stat-item">
+                        <span id="total-tasks">0</span> Total
+                    </div>
+                    <div class="stat-item">
+                        <span id="completed-tasks">0</span> Done
+                    </div>
+                    <div class="stat-item">
+                        <span id="pending-tasks">0</span> Pending
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <span style="color: #666;">🌙</span>
+                    <div class="toggle-switch" id="themeToggle">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-row">
+                    <input type="date" id="dueDateInput" class="input-field date-input">
+                    <select id="prioritySelect" class="priority-select">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button id="addTaskBtn" class="add-btn">Add Task</button>
+            </div>
+
+            <!-- Tasks Section -->
+            <div class="tasks-section">
+                <div class="tasks-header">
+                    <h3 class="section-title">Your Tasks</h3>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="pending">Pending</button>
+                        <button class="filter-tab" data-filter="completed">Completed</button>
+                    </div>
+                </div>
+                <ul class="task-list" id="taskList"></ul>
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div class="empty-state-icon">📝</div>
+                    <h3>No tasks yet</h3>
+                    <p>Add your first task to get started!</p>
+                </div>
+            </div>
         </div>
-        <ul id="list-container">
-        </ul>
     </div>
-   </div> 
-   <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
